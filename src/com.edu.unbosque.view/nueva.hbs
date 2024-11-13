@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar Nueva Película</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <h2>Agregar Nueva Película</h2>
+    <form action="/peliculas/nueva" method="POST">
+        <label for="cip">CIP (Código de película):</label>
+        <input type="text" name="cip" id="cip" required maxlength="10" />
+
+        <label for="titulo_p">Título de la película:</label>
+        <input type="text" name="titulo_p" id="titulo_p" required maxlength="45" />
+
+        <label for="ano_produccion">Año de producción:</label>
+        <input type="number" name="ano_produccion" id="ano_produccion" required min="1900" />
+
+        <label for="titulo_s">Título secundario:</label>
+        <input type="text" name="titulo_s" id="titulo_s" />
+
+        <label for="nacionalidad">Nacionalidad:</label>
+        <input type="text" name="nacionalidad" id="nacionalidad" />
+
+        <label for="presupuesto">Presupuesto:</label>
+        <input type="number" name="presupuesto" id="presupuesto" required min="1" />
+
+        <label for="duracion">Duración (minutos):</label>
+        <input type="number" name="duracion" id="duracion" required min="1" />
+
+        <button type="submit">Agregar Película</button>
+    </form>
+</body>
+</html>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>INDEX</title>
+    <title>Cuevanita1.0</title>
 </head>
 <body>
      <h2>Lista de Películas</h2>
@@ -11,11 +11,15 @@
 <!-- Mostrar la lista de películas -->
   <ul>
       {{#each peliculas}}
-          <li>
-              <h3>{{titulo_p}}</h3>
-              <p>{{ano_produccion}}</p>
-              <p>{{duracion}} minutos</p>
-          </li>
+        <div>
+            <h3>{{titulo_p}} ({{ano_produccion}})</h3>
+            <p>Título Secundario: {{titulo_s}}</p>
+            <p>Nacionalidad: {{nacionalidad}}</p>
+            <p>Presupuesto: ${{presupuesto}}</p>
+            <p>Duración: {{duracion}} minutos</p>
+            <a href="/peliculas/editar/{{_id}}">Editar</a> | 
+            <a href="/peliculas/eliminar/{{_id}}" onclick="return confirm('¿Estás seguro de que quieres eliminar esta película?');">Eliminar</a>
+        </div>
       {{/each}}
   </ul>
 

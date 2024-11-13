@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuevanita1.0</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <h2>Editar Película</h2>
+    <form action="/peliculas/editar/{{pelicula._id}}" method="POST">
+        <label for="cip">CIP (Código de película):</label>
+        <input type="text" name="cip" id="cip" value="{{pelicula.cip}}" required maxlength="10" />
+
+        <label for="titulo_p">Título de la película:</label>
+        <input type="text" name="titulo_p" id="titulo_p" value="{{pelicula.titulo_p}}" required maxlength="45" />
+
+        <label for="ano_produccion">Año de producción:</label>
+        <input type="number" name="ano_produccion" id="ano_produccion" value="{{pelicula.ano_produccion}}" required min="1900" />
+
+        <label for="titulo_s">Título secundario:</label>
+        <input type="text" name="titulo_s" id="titulo_s" value="{{pelicula.titulo_s}}" />
+
+        <label for="nacionalidad">Nacionalidad:</label>
+        <input type="text" name="nacionalidad" id="nacionalidad" value="{{pelicula.nacionalidad}}" />
+
+        <label for="presupuesto">Presupuesto:</label>
+        <input type="number" name="presupuesto" id="presupuesto" value="{{pelicula.presupuesto}}" required min="1" />
+
+        <label for="duracion">Duración (minutos):</label>
+        <input type="number" name="duracion" id="duracion" value="{{pelicula.duracion}}" required min="1" />
+
+        <button type="submit">Actualizar Película</button>
+    </form>
+</body>
+</html>

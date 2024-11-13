@@ -5,6 +5,13 @@ import path from 'path';
 
 const app = express();
 
+// Middleware para archivos estáticos
+app.use(express.static(path.join(__dirname, 'public')));
+
+// Middleware para parsear cuerpos JSON y formularios
+app.use(express.urlencoded({ extended: true })); // Para formularios x-www-form-urlencoded
+app.use(express.json()); // Para cuerpos JSON
+
 // Motor de plantillas
 app.set("views", path.join(__dirname, "com.edu.unbosque.view"));
 

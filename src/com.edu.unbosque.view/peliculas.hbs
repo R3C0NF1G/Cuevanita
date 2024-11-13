@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Películas</title>
-    <link rel="stylesheet" href="/path/to/your/styles.css"> <!-- Agrega la ruta de tu CSS si es necesario -->
+    <title>Cuevanita1.0</title>
+    <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
 
@@ -12,7 +12,6 @@
     <nav>
         <ul>
             <li><a href="/">Inicio</a></li>
-            <li><a href="/peliculas">Lista de Películas</a></li>
             <li><a href="/peliculas/nueva">Agregar Nueva Película</a></li>
         </ul>
     </nav>
@@ -26,7 +25,6 @@
 
     <!-- Mostrar lista de películas -->
     <ul>
-        <ul>
         {{#each peliculas}}
             <li>
                 <strong>{{titulo_p}}</strong> ({{ano_produccion}})<br>
@@ -35,11 +33,11 @@
                 Presupuesto: ${{presupuesto}}<br>
                 Duración: {{duracion}} minutos
                 <br><br>
-                <a href="/peliculas/{{_id}}">Ver Detalles</a> | <a href="/peliculas/{{_id}}/editar">Editar</a> | <a href="/peliculas/{{_id}}/eliminar">Eliminar</a>
+                <!-- Enlaces de acción -->
+                <a href="/peliculas/editar/{{_id}}">Editar</a> | 
+                <a href="/peliculas/eliminar/{{_id}}">Eliminar</a>
             </li>
         {{/each}}
-    </ul>
-
     </ul>
 
     {{/if}}
