@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Películas</title>
+    <link rel="stylesheet" href="/path/to/your/styles.css"> <!-- Agrega la ruta de tu CSS si es necesario -->
+</head>
+<body>
+
+    <!-- Barra de navegación -->
+    <nav>
+        <ul>
+            <li><a href="/">Inicio</a></li>
+            <li><a href="/peliculas">Lista de Películas</a></li>
+            <li><a href="/peliculas/nueva">Agregar Nueva Película</a></li>
+        </ul>
+    </nav>
+
+    <h2>Lista de Películas</h2>
+
+    <!-- Mensaje si no hay películas -->
+    {{#if mensaje}}
+        <p>{{mensaje}}</p>
+    {{else}}
+
+    <!-- Mostrar lista de películas -->
+    <ul>
+        <ul>
+        {{#each peliculas}}
+            <li>
+                <strong>{{titulo_p}}</strong> ({{ano_produccion}})<br>
+                Título Secundario: {{titulo_s}}<br>
+                Nacionalidad: {{nacionalidad}}<br>
+                Presupuesto: ${{presupuesto}}<br>
+                Duración: {{duracion}} minutos
+                <br><br>
+                <a href="/peliculas/{{_id}}">Ver Detalles</a> | <a href="/peliculas/{{_id}}/editar">Editar</a> | <a href="/peliculas/{{_id}}/eliminar">Eliminar</a>
+            </li>
+        {{/each}}
+    </ul>
+
+    </ul>
+
+    {{/if}}
+
+</body>
+</html>

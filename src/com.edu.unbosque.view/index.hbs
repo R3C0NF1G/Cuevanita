@@ -6,6 +6,45 @@
     <title>INDEX</title>
 </head>
 <body>
-    <h1>BUENA SOCIO</h1>
+     <h2>Lista de Películas</h2>
+
+<!-- Mostrar la lista de películas -->
+  <ul>
+      {{#each peliculas}}
+          <li>
+              <h3>{{titulo_p}}</h3>
+              <p>{{ano_produccion}}</p>
+              <p>{{duracion}} minutos</p>
+          </li>
+      {{/each}}
+  </ul>
+
+
+  <!-- Formulario para agregar nueva película -->
+  <h3>Agregar Nueva Película</h3>
+<form action="/peliculas" method="POST"> <!-- Corregir la sintaxis del formulario -->
+    <label for="cip">CIP (Código de película):</label>
+    <input type="text" name="cip" id="cip" required maxlength="10" />
+
+    <label for="titulo_p">Título de la película:</label>
+    <input type="text" name="titulo_p" id="titulo_p" required maxlength="45" />
+
+    <label for="ano_produccion">Año de producción:</label>
+    <input type="number" name="ano_produccion" id="ano_produccion" required min="1900" />
+
+    <label for="titulo_s">Título secundario:</label>
+    <input type="text" name="titulo_s" id="titulo_s" />
+
+    <label for="nacionalidad">Nacionalidad:</label>
+    <input type="text" name="nacionalidad" id="nacionalidad" />
+
+    <label for="presupuesto">Presupuesto:</label>
+    <input type="number" name="presupuesto" id="presupuesto" required min="1" />
+
+    <label for="duracion">Duración (minutos):</label>
+    <input type="number" name="duracion" id="duracion" required min="1" />
+
+    <button type="submit">Agregar Película</button>
+</form>
 </body>
 </html>
